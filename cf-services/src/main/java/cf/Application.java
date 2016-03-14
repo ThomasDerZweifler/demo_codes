@@ -21,8 +21,8 @@ public class Application {
 
         try{
             CfService cfs = new MongoCfService();
-            UserName name1 = new UserName("Mr.", "Armaan", "K.", "Marwaha");
-            UserName name2 = new UserName("Mr.", "Harsh", "K.", "Marwaha");
+            UserName name1 = new UserName("Mr.", "abhishek", "K.", "UpADHYAY");
+            UserName name2 = new UserName("Mr.", "Abhishek", "K.", "Upadhyay");
             UserAddress Address1 = new UserAddress(name1, "A-204", "LJaipuri", "Ghaziabad", "201014", "9670976720");
             UserAddress Address2 = new UserAddress(name2, "A-204", "LJaipuri", "Ghaziabad", "201014", "9650909291");
             UserPhone phone = new UserPhone("+91", "9670976720");

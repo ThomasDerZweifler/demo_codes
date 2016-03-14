@@ -47,7 +47,7 @@ public class MailSender implements  Runnable {
         try {
             mailMsg.setFrom("abhishek@craftemporio.com");
             mailMsg.setTo("abhishek.upadhyay.cse12@iitbhu.ac.in");
-            mailMsg.setSubject("Test mail From CraftEmporio");
+            mailMsg.setSubject("Spring Mail Test");
             mailMsg.setText("Hello World!");
         } catch (MessagingException e) {
             e.printStackTrace();

@@ -37,8 +37,9 @@ class UserController {
         this.cfService=cfService;
     }
 
-    @PreAuthorize("#oauth2.hasScope('write') and hasRole('ROLE_ADMIN')")
+
     @RequestMapping(value="/ur")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public List<DBObject> home() {
 
         System.out.println("yahan tak thik hai 0");

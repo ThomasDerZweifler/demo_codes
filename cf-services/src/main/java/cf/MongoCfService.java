@@ -111,11 +111,22 @@ public class MongoCfService implements CfService{
 
     @Override
     public JSONObject findByEmail(String username) throws Exception {
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.accumulate("username","user1");
-        jsonObject.accumulate("password","pwd");
-        if(username.equals("user1"))
+        if(username.equals("user"))
+        {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.accumulate("username","user");
+            jsonObject.accumulate("password","pwd");
+            jsonObject.accumulate("role","ROLE_USER");
             return jsonObject;
-        else return null;
+        }
+
+        else
+        {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.accumulate("username","admin");
+            jsonObject.accumulate("password","pwd");
+            jsonObject.accumulate("role","ROLE_ADMIN");
+            return jsonObject;
+        }
     }
 }

@@ -35,10 +35,20 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException(String.format("User %s does not exist!", username));
         }
         System.out.println("done successfully");
+        if(jsonObject.getString("role").equals("ROLE_USER"))
         return  new org.springframework.security.core.userdetails.User(
                 jsonObject.getString("username"),jsonObject.getString("password"),true,true,
                 true,true,
-                AuthorityUtils.createAuthorityList("USER", "write")
+                AuthorityUtils.createAuthorityList("ROLE_USER", "write")
         );
+        else
+        {
+            return  new org.springframework.security.core.userdetails.User(
+                    jsonObject.getString("username"),jsonObject.getString("password"),true,true,
+                    true,true,
+                    AuthorityUtils.createAuthorityList("ROLE_ADMIN", "write")
+            );
+        }
+
     }
 }
